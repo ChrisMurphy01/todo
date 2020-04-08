@@ -1,0 +1,41 @@
+{
+  "name": "truelayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:open": "cypress open",
+    "test:run": "cypress run",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.1",
+    "cssnano": "^4.1.10",
+    "cypress": "^4.3.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.0.4",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "precss": "^4.0.0",
+    "react-hot-loader": "^4.12.20",
+    "style-loader": "^1.1.3",
+    "sugarss": "^2.0.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "uid": "^1.0.0"
+  }
+}

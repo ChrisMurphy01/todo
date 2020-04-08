@@ -1,0 +1,27 @@
+:root {
+  --color-grey-dark: #333;
+  --color-white: #fff;
+  --color-text: var(--color-grey-dark);
+  --color-bg-primary: var(--color-white);
+  --color-bg-mask: rgba(0, 0, 0, .2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.4rem;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+}
