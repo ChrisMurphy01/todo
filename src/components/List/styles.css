@@ -1,1 +1,43 @@
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: var(--gutter);
+}
 
+.listItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: var(--gutter);
+  padding-bottom: var(--gutter);
+  border-bottom: var(--border);
+}
+
+.content, .controls {
+  flex: 1 1 250px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.name, .desc {}
+
+.name {
+  font-weight: 900;
+  margin-bottom: calc(var(--gutter)/2);
+}
+
+.desc {}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-grow: 0;
+}
+
+.controls button:nth-child(odd) {
+  margin-right: calc(var(--gutter)/4);
+}

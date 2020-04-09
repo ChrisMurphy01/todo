@@ -1,0 +1,11 @@
+.button {
+  padding: calc(var(--gutter)/3) calc(var(--gutter)/1);
+  background-color: var(--color-tertiary);
+  border: var(--border);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.button:focus, .button:active {
+  border: var(--border-focus);
+}

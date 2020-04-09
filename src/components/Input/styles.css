@@ -1,0 +1,8 @@
+.input {
+  padding: calc(var(--gutter)/2);
+  border: var(--border);
+}
+
+.input:focus, .input:active {
+  border: var(--border-focus);
+}

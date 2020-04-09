@@ -1,0 +1,8 @@
+.textarea {
+  padding: calc(var(--gutter)/2);
+  border: var(--border);
+}
+
+.textarea:focus, .textarea:active {
+  border: var(--border-focus);
+}

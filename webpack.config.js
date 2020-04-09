@@ -56,4 +56,5 @@ module.exports = {
     contentBase: './dist',
     hot: true,
   },
+  devtool: 'source-map',
 }

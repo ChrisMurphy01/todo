@@ -1,9 +1,19 @@
 :root {
   --color-grey-dark: #333;
   --color-white: #fff;
+  --color-hotpink: hotpink;
+  --color-pink: pink;
+  /* Colors */
   --color-text: var(--color-grey-dark);
-  --color-bg-primary: var(--color-white);
+  --color-primary: var(--color-hotpink);
+  --color-secondary: var(--color-pink);
+  --color-tertiary: var(--color-white);
   --color-bg-mask: rgba(0, 0, 0, .2);
+  /* Spacing */
+  --gutter: 2rem;
+  /* Styles */
+  --border: solid 3px var(--color-text);
+  --border-focus: solid 3px var(--color-primary);
 }
 
 * {
@@ -15,7 +25,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
 }
 
@@ -24,4 +34,10 @@ body {
   margin: 0;
   padding: 0;
   color: var(--color-text);
+  background-color: var(--color-secondary);
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
 }

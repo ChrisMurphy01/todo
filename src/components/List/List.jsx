@@ -5,56 +5,71 @@ import Button from '../Button/Button'
 import Edit from '../Edit/Edit'
 
 const List = ({ data, setData }) => {
-  const [showEdit, setShowEdit] = useState(false)
+  const [editId, setEditId] = useState(false)
 
   function handleRemoveTodo(id) {
-    setData((prev) => {
-      let newList = prev.filter((item) => {
-        return item.id !== id
-      })
+    setData((data) => {
+      delete data[id]
 
-      return newList
+      return { ...data }
     })
   }
 
   function showEditTodo(id) {
-    setShowEdit(id)
+    setEditId(id)
   }
 
   function handleCloseEdit() {
-    setShowEdit(false)
+    setEditId(false)
   }
 
   function listItems() {
-    return data.map((item) => {
-      const id = Object.keys(item)[0]
-      const name = item[id].name
-      const desc = item[id].desc
+    return Object.keys(data).map((id) => {
+      const name = data[id].name
+      const desc = data[id].desc
 
       return (
-        <ListItem data-cy="todo-list-item" key={id}>
-          <span data-cy="name">{name}</span>
-          <span data-cy="desc">{desc}</span>
-          <Button type="button" onClick={() => showEditTodo(id)}>
-            Edit
-          </Button>
-          <Button type="button" onClick={() => handleRemoveTodo(id)}>
-            &times;
-          </Button>
-          {showEdit === id && (
-            <Edit
-              id={id}
-              item={item[id]}
-              handleCloseEdit={handleCloseEdit}
-              setData={setData}
-            />
-          )}
+        <ListItem data-cy="todo-list-item" key={id} className={styles.listItem}>
+          <div className={styles.content}>
+            <span data-cy="name" className={styles.name}>
+              {name}
+            </span>
+            <span data-cy="desc" className={styles.desc}>
+              {desc}
+            </span>
+          </div>
+          <div className={styles.controls}>
+            <Button
+              type="button"
+              onClick={() => showEditTodo(id)}
+              data-cy="edit"
+            >
+              Edit
+            </Button>
+            <Button
+              type="button"
+              onClick={() => handleRemoveTodo(id)}
+              data-cy="remove"
+            >
+              &times;
+            </Button>
+            {editId === id && (
+              <Edit
+                id={id}
+                item={data[id]}
+                handleCloseEdit={handleCloseEdit}
+                setData={setData}
+              />
+            )}
+          </div>
         </ListItem>
       )
     })
   }
 
-  return <ul>{listItems()}</ul>
+  console.log(JSON.stringify(data))
+
+  return <ul className={styles.list}>{listItems()}</ul>
 }
 
 export default List

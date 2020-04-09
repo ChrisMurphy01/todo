@@ -2,6 +2,8 @@
 
 ## Hosted
 
+https://trusting-snyder-5c555e.netlify.com/
+
 ## Local
 
 GitHub: https://github.com/chrismurphy01/todo
