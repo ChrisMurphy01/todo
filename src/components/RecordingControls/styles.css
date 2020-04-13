@@ -1,0 +1,60 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+  padding: var(--gutter);
+}
+
+.controlButton {
+  display: flex;
+  justify-content: space-between;
+  padding-right: calc(var(--gutter)/2);
+  margin-bottom: calc(var(--gutter)/2);
+  flex-grow: 1;
+}
+
+.record, .stop, .play, .clear {
+  display: block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  margin-left: calc(var(--gutter)/2);
+}
+
+.record {
+  border-radius: 100%;
+  background-color: var(--color-icon);
+}
+
+.recording {
+  background-color: var(--color-icon-recording);
+}
+
+.stop {
+  background-color: var(--color-icon);
+}
+
+.play {
+  width: 0;
+  height: 0;
+  border-left: solid 1em var(--color-icon);
+  border-top: solid .5em transparent;
+  border-bottom: solid .5em transparent;
+}
+
+.playing {
+  border-left-color: var(--color-icon-playing);
+}
+
+@media(min-width: 540px) {
+  .controls {
+    flex-direction: row;
+    padding-left: 0;
+  }
+  .controlButton {
+    margin-bottom: 0;
+    margin-left: var(--gutter);
+  }
+}

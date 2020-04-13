@@ -1,26 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './styles.css'
 import ListItem from './ListItem'
 import Button from '../Button/Button'
 import Edit from '../Edit/Edit'
 
-const List = ({ data, setData }) => {
-  const [editId, setEditId] = useState(false)
-
+const List = ({
+  data,
+  removeTodo,
+  editTodo,
+  handleOnEditChange,
+  handleSaveEdit,
+  showEditTodo,
+  handleCloseEdit,
+  formData,
+  edit,
+}) => {
   function handleRemoveTodo(id) {
-    setData((data) => {
-      delete data[id]
-
-      return { ...data }
-    })
-  }
-
-  function showEditTodo(id) {
-    setEditId(id)
-  }
-
-  function handleCloseEdit() {
-    setEditId(false)
+    removeTodo(id)
   }
 
   function listItems() {
@@ -29,7 +25,12 @@ const List = ({ data, setData }) => {
       const desc = data[id].desc
 
       return (
-        <ListItem data-cy="todo-list-item" key={id} className={styles.listItem}>
+        <ListItem
+          data-cy="todo-list-item"
+          id={id}
+          key={id}
+          className={styles.listItem}
+        >
           <div className={styles.content}>
             <span data-cy="name" className={styles.name}>
               {name}
@@ -43,6 +44,7 @@ const List = ({ data, setData }) => {
               type="button"
               onClick={() => showEditTodo(id)}
               data-cy="edit"
+              id={`edit-${id}`}
             >
               Edit
             </Button>
@@ -53,12 +55,16 @@ const List = ({ data, setData }) => {
             >
               &times;
             </Button>
-            {editId === id && (
+            {id === edit.id && (
               <Edit
                 id={id}
                 item={data[id]}
+                handleOnEditChange={handleOnEditChange}
                 handleCloseEdit={handleCloseEdit}
-                setData={setData}
+                formData={formData}
+                editTodo={editTodo}
+                edit={edit}
+                handleSaveEdit={handleSaveEdit}
               />
             )}
           </div>
@@ -66,8 +72,6 @@ const List = ({ data, setData }) => {
       )
     })
   }
-
-  console.log(JSON.stringify(data))
 
   return <ul className={styles.list}>{listItems()}</ul>
 }

@@ -53,18 +53,14 @@ context('Todo', () => {
     it('edits a todo', () => {
       cy.fixture('todo/list-data.json')
         .as('edit')
-        .then((data) => {
-          const id = Object.keys(data)[1]
+        .then(() => {
           const newValue = 42
 
           cy.get('[data-cy=edit]').first().click()
 
           cy.get('[data-cy=edit-modal]').should('be.visible')
 
-          cy.get('[data-cy=edit-modal-name]')
-            .should('have.value', data[id].name)
-            .clear()
-            .type(newValue)
+          cy.get('[data-cy=edit-modal-name]').type(newValue)
 
           cy.get('[data-cy=save]').first().click()
 

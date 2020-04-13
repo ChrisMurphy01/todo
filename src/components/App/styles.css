@@ -3,12 +3,17 @@
   --color-white: #fff;
   --color-hotpink: hotpink;
   --color-pink: pink;
+  --color-red: rgb(218, 18, 18);
+  --color-green: rgb(0, 175, 0);
   /* Colors */
   --color-text: var(--color-grey-dark);
   --color-primary: var(--color-hotpink);
   --color-secondary: var(--color-pink);
   --color-tertiary: var(--color-white);
-  --color-bg-mask: rgba(0, 0, 0, .2);
+  --color-bg-mask: rgba(0, 0, 0, .4);
+  --color-icon: var(--color-grey-dark);
+  --color-icon-recording: var(--color-red);
+  --color-icon-playing: var(--color-green);
   /* Spacing */
   --gutter: 2rem;
   /* Styles */

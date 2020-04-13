@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './styles.css'
 
-const Button = ({ children, ...rest }) => {
+const Button = ({ children, className, ...rest }) => {
   return (
-    <button className={styles.button} {...rest}>
+    <button className={`${styles.button} ${className}`} {...rest}>
       {children}
     </button>
   )

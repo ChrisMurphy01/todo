@@ -1,0 +1,24 @@
+{
+  "isRecording": true,
+  "isPlaying": false,
+  "steps": [
+    {
+      "ADD": {
+        "ynae5znvtye": { "name": "1", "desc": "aaa", "created": 1586783102813 }
+      }
+    },
+    {
+      "ADD": {
+        "sub4zknywt1": { "name": "2", "desc": "bbb", "created": 1586783103521 }
+      }
+    },
+    { "REMOVE": "ynae5znvtye" },
+    {
+      "EDIT": {
+        "type": "EDIT",
+        "id": "sub4zknywt1",
+        "payload": { "name": "42", "desc": "", "created": 1586783103521 }
+      }
+    }
+  ]
+}

@@ -33,11 +33,18 @@
 
 .controls {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-start;
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
 .controls button:nth-child(odd) {
   margin-right: calc(var(--gutter)/4);
+}
+
+@media(min-width: 540px) {
+  .controls {
+    flex-grow: 0;
+    justify-content: flex-end;
+  }
 }
